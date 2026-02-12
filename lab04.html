@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab 4 Tableau Map | Mary Kate Cahill </title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!-- Navigation: Links to all portfolio pages -->
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="lab02.html">AI Evaluation</a></li>
+<li><a href="lab03.html">Tufte Critique</a></li>
+<li><a href="lab04.html">Tableau Viz</a></li>
+<li><a href="lab5.html">Lab 5</a></li>
+<li><a href="hometown-map.html">Hometown Map</a></li>
+</ul>
+</nav>
+
+<header>
+<h1>Lab 4: Exploratory Data Analysis in Tableau</h1>
+<p>DCDA 40833 Skills Portfolio | Spring 2026</p>
+</header>
+
+<main>
+<section>
+=<h2>Visualization</h2>
+<p>This interactive dashboard shows the most popular baby names for boys and girls in each U.S. state from 1910–2012. The data comes from the Social Security Administration. You can use the Year filter and hover over the visuals to see how name trends change over time and across different states.
+</p>
+<!-- Tableau Embed Container -->
+<div class="tableauPlaceholder" style="width: 100%; max-width: 1100px; margin: 0 auto;">
+<!-- PASTE YOUR TABLEAU PUBLIC EMBED CODE BELOW THIS LINE -->
+<div class='tableauPlaceholder' id='viz1770922854527' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CS&#47;CS8RSRTHS&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;CS8RSRTHS' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CS&#47;CS8RSRTHS&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1770922854527');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1227px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+<p>
+<strong>Title:</strong> Top Baby Names in the U.S. 1910-2012 <br>
+=<strong>Source:</strong><a href="https://www.ssa.gov/oact/babynames/limits.html" target="_blank">Social Security Administration (SSA)</a> <br>   
+<strong>Data Download:</strong> <a href="TopBabyNamesbyState.xlsx" target="blank"> Top Baby Names by State (Excel) </a> <br>
+</a>
+</p>
+</section>
+
+<section>
+<h2>Reflection & Analysis</h2>
+<h3>1. Data Preparation</h3>
+Uploading the dataset into Tableau itself was not the hardest part. The file opened correctly and Tableau read the columns without any major errors. The harder part for me was figuring out how to actually turn the data into the type of visualization I wanted, especially the map.
+At first, I struggled to get the visual map to work correctly. Even though I had a “State” column, I was confused about how to make Tableau recognize it as geographic data. I had to experiment with dragging the field into different areas and making sure it was categorized properly. Once I figured out how to assign the geographic role and place it correctly in the view, the map finally displayed.
+Another challenge was not inside Tableau, but in connecting my published visualization to my portfolio. Overall, the data itself did not need much cleaning, but understanding how to use Tableau’s features and how to publish and embed the final result took the most effort.
+
+</p>
+
+<h3>2. Design Choices</h3>
+My dashboard includes three visualizations: a map, a bar chart, and an area chart. I chose these because I wanted to show patterns in different ways instead of just using one type of graph. The map shows the most popular baby name in each state. I included a Year filter so users can move through time and see how the top names change. I also added detailed tooltips that show the top name, number of occurrences, state, and gender. I wanted the map to be simple, but still give more information when someone hovers over it. The bar chart shows the top 10 baby names overall. This helps show which names have had the most long-term popularity from 1910–2012. For the time-based visualization, I changed my original line graph into an area chart. I did this because the filled-in area makes it easier to see large increases and decreases over time. The peaks are way more obvious which helps highlight trends.
+<h3>3. Expected Patterns</h3>
+<p>Before looking closely at the dashboard, I expected some names to stay popular for long periods of time, especially traditional male names. I also expected female names to change more quickly and go in and out of style faster. The area chart definitely confirmed this. Some names show long stretches of popularity, while others spike and then decline. When focusing on the middle part of the timeline, you can clearly see some names dominate for a few decades before fading. I also expected earlier decades to look more similar across states. When using the Year filter on the map, that pattern mostly holds true. Later years show more variation between states, which matches the idea that naming has become more personalized over time.
+
+<h3> 4. Suprises & Outliers</h3>
+One of the biggest surprises was how sharp some of the spikes are in the area chart. Some names become extremely popular very quickly and then drop off in a short period of time. I did not expect the changes to be that dramatic. Another surprise was seeing how certain names cluster geographically. In some years, groups of neighboring states share the same top name, while other states stand out completely. I did not expect geography to play as visible of a role as it does in certain years. It also surprised me how quickly some traditionally common names decline in later years. It definitely had me thinking about how unique names have become with this newer generation of parents. 
+
+
+<h3>5. Questions for Further Investigation</h3>
+
+What cultural events or celebrities influenced the spikes in certain names?
+
+
+Why do female names appear to cycle faster than male names?
+
+
+Are certain regions consistently more traditional over time?
+
+
+Has name diversity increased steadily since 1910?
+
+
+How do migration patterns affect naming trends across states?
+
+
+<h3> 6. Tool Evaluation</h3>
+<p>
+Tableau Public is strong because it allows you to create interactive dashboards without coding. Once I understood how to use it, it was easy to experiment with different chart types and add filters. The Year filter especially made the map much more useful. However I definitely struggled figuring out how to build the map. Publishing and embedding the visualization into my portfolio also gave me some issues. I really enjoyed Tableau but it was definitely challenging to get used to! 
+
+
+</p>
+
+</section>
+</div>
+ <footer>
+        <p>© 2026 Mary Kate Cahill</p>
+    </footer>
+</body>
+</html>
