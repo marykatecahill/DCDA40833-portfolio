@@ -8,6 +8,23 @@
 </head>
 
 <body>
+  <nav>
+    <!-- Hamburger menu button (hidden on desktop, visible on mobile) -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lab02.html">AI Evaluation</a></li>
+        <li><a href="lab03.html">Tufte Critique</a></li>
+        <li><a href="lab04.html">Lab 4: Tableau</a></li>
+        <li><a href="lab5.html">Lab 5</a></li>
+        <li><a href="hometown-map.html">Hometown Map</a></li>
+    </ul>
+  </nav>
 
   <header>
     <h1>Mary Kate Cahill</h1>
@@ -65,6 +82,32 @@ Overall, this experiment made AI feel less like a smart machine and more like so
   <footer>
     <p>&copy; 2026 Mary Kate Cahill | DCDA 40833 | TCU</p>
   </footer>
+
+  <!-- JavaScript for hamburger menu toggle -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+    
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+    
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+  </script>
 
 </body>
 </html>

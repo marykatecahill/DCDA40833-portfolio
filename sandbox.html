@@ -3,44 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sandbox | Mary Kate Cahill</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+    <!-- Navigation with hamburger menu -->
+    <nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lab02.html">AI Evaluation</a></li>
+            <li><a href="lab03.html">Tufte Critique</a></li>
+            <li><a href="lab04.html">Lab 4: Tableau</a></li>
+            <li><a href="lab5.html">Lab 5</a></li>
+            <li><a href="hometown-map.html">Hometown Map</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Sandbox Page</h1>
+        <p>Experimental workspace</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Project Home</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia dicta consequuntur obcaecati possimus facere tenetur, commodi, maxime eius ab debitis in esse expedita ratione dolorum alias unde repellat modi? Libero.</p>
+            <p>This <a href="https://www.tcu.edu">link will take you to TCU's home page</a>.</p>
+
+            <figure class="viz-container">
+                <img src="images/mk.jpg" alt="CSS New Build">
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mary Kate Cahill | DCDA 40833 | TCU</p>
+    </footer>
+
+    <!-- JavaScript for hamburger menu toggle -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
-
-
-
-
-
-
-<h1>Project Home</h1>
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia dicta consequuntur obcaecati possimus facere tenetur, commodi, maxime eius ab debitis in esse expedita ratione dolorum alias unde repellat modi? Libero.</p>
-<p>This <a href="htttps://www.tcu.edu"></a>link will take you to TCU's home page.</p>
-
-<img src="images/mk.jpg" alt="CSS New Build" width="70%">
-
-
-<style>
-    h1 {color:purple;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans serif;}
-    p {font-family: 'Arial', sans-serif; 
-    font size: 18px;
-    line-height: 1.6;}
-
-
-
-
-  <style> 
-    
- </head>
- 
-
-
-
-
-
-
 </html>
 
 

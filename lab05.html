@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 05 | Mary Kate Cahill</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .dark-mode-toggle {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #555;
+        }
+
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode nav {
+            background-color: #2a2a2a;
+        }
+
+        body.dark-mode nav a {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode header {
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+        }
+
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav, header {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        img {
+            max-width: 100%;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lab02.html">AI Evaluation</a></li>
+        <li><a href="lab03.html">Tufte Critique</a></li>
+        <li><a href="lab04.html">Lab 4: Tableau</a></li>
+        <li><a href="lab05.html">Lab 5</a></li>
+        <li><a href="hometown-map.html">Hometown Map</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h1>Lab 05: AI-Assisted Coding (Vibe Coding)</h1>
+    <p>DCDA 40833 Skills Portfolio | Spring 2026</p>
+</header>
+
+<main>
+
+<section>
+    <button class="dark-mode-toggle" id="darkModeToggle">🌙 Dark Mode</button>
+
+    <h2>Dark Mode Feature</h2>
+    <p>
+        For Experiment A, I used AI to help me build a dark mode toggle.
+        When I click the button, the page switches between light and dark colors.
+        The code works by adding or removing a class on the body, and the CSS changes the colors.
+    </p>
+
+    <p>
+        I understand how the button is selected using its ID and how a click event runs the function.
+        I understand that toggling the “dark-mode” class is what changes the design.
+        I would not have known how to use localStorage to save the setting without AI.
+    </p>
+</section>
+
+<section>
+    <h2>Experiment C: Debugging with AI</h2>
+    <p>
+        For debugging, I worked on fixing navigation and structure issues.
+        At first, my links did not work because they were written as href="#",
+        which is just a placeholder. AI helped me realize I needed to use real file names
+        like lab04.html so the links would actually navigate.
+    </p>
+
+    <p>
+        I also learned that duplicate script tags or incorrect HTML structure
+        can completely stop JavaScript from running.
+        That helped me understand that debugging is not always about logic —
+        sometimes it is just fixing structure.
+    </p>
+</section>
+
+<section>
+    <h2>My Understanding Spectrum</h2>
+    <p>
+        I understand how to select elements with getElementById and how addEventListener works.
+        I understand what classList.toggle does and why it changes the appearance.
+        I know what localStorage does conceptually, but I would not feel confident writing it without help.
+    </p>
+</section>
+
+<section>
+    <h2>My Vibe Coding Guidelines</h2>
+    <ul>
+        <li>I will not submit code if I cannot explain what it does.</li>
+        <li>I will test everything in Live Server after AI gives code.</li>
+        <li>I will try simple fixes myself before asking AI.</li>
+        <li>I will clearly state when AI helped generate code.</li>
+        <li>I will use AI as a tool, not as a replacement for learning.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Screenshot / Demo</h2>
+    <p>Below is a screenshot of my dark mode working:</p>
+
+    <!-- Put your screenshot in an images folder -->
+    <img src="images/lab5-screenshot.png" alt="Dark mode working screenshot">
+</section>
+
+</main>
+
+<script>
+    const toggleButton = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    const savedMode = localStorage.getItem('darkMode');
+
+    if (savedMode === 'enabled') {
+        body.classList.add('dark-mode');
+        toggleButton.textContent = '☀️ Light Mode';
+    }
+
+    toggleButton.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        const isDarkMode = body.classList.contains('dark-mode');
+
+        if (isDarkMode) {
+            toggleButton.textContent = '☀️ Light Mode';
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            toggleButton.textContent = '🌙 Dark Mode';
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+</script>
+
+</body>
+</html>

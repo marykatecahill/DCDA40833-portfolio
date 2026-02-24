@@ -9,7 +9,14 @@
 <body>
 <!-- Navigation: Links to all portfolio pages -->
 <nav>
-<ul>
+<!-- Hamburger menu button (hidden on desktop, visible on mobile) -->
+<button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<ul id="nav-menu">
 <li><a href="index.html">Home</a></li>
 <li><a href="lab02.html">AI Evaluation</a></li>
 <li><a href="lab03.html">Tufte Critique</a></li>
@@ -89,5 +96,31 @@ Tableau Public is strong because it allows you to create interactive dashboards 
  <footer>
         <p>© 2026 Mary Kate Cahill</p>
     </footer>
+
+    <!-- JavaScript for hamburger menu toggle -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>

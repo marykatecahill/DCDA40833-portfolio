@@ -10,12 +10,19 @@
 </head>
 <body>
     <nav>
-        <ul>
+        <!-- Hamburger menu button (hidden on desktop, visible on mobile) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul id="nav-menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="lab02.html">AI Evaluation</a></li>
+            <li><a href="ai-evaluation.html">AI Evaluation</a></li>
             <li><a href="lab03.html">Tufte Critique</a></li>
             <li><a href="lab04.html">Lab 4: Tableau</a></li>
-            <li><a href="lab5.html">Lab 5</a></li>
+            <li><a href="lab05.html">Lab 5</a></li>
             <li><a href="hometown-map.html">Hometown Map</a></li>
         </ul>
     </nav>
@@ -53,7 +60,7 @@
         
             
 <figure class="viz-container">
-    <img src="images/profile.jpg" alt="Photo of Mary Kate Cahill">
+    <img src="images/profile.jpg" alt="Photo of Mary Kate Cahill" style="max-width: 250px; height: auto;">
 
 
         </section>
@@ -74,22 +81,22 @@
                 </a>
 
                 <!-- Lab 3: Tufte Critique -->
-               <a href="lab03.html" class="portfolio-card"></a>
-    <h3>Tufte Critique</h3>
-    <span class="lab-tag">Lab 3</span>
-    <p>Critical analysis of a data visualization using Edward Tufte's principles of graphical excellence.</p>
-</a>
+                <a href="lab03.html" class="portfolio-card">
+                    <h3>Tufte Critique</h3>
+                    <span class="lab-tag">Lab 3</span>
+                    <p>Critical analysis of a data visualization using Edward Tufte's principles of graphical excellence.</p>
+                </a>
 
 
                 <!-- Lab 4: Tableau Visualization -->
-                <a href="tableau-visualization.html" class="portfolio-card">
+                <a href="lab04.html" class="portfolio-card">
                     <h3>Tableau Visualization</h3>
                     <span class="lab-tag">Lab 4</span>
                     <p>Interactive data visualization created with Tableau Public, exploring patterns in real-world data.</p>
                 </a>
 
                 <!-- Lab 5: TBD -->
-                <a href="lab5.html" class="portfolio-card">
+                <a href="lab05.html" class="portfolio-card">
                     <h3>Lab 5</h3>
                     <span class="lab-tag">Lab 5</span>
                     <p>Content based on Lab 5 assignment.</p>
@@ -120,5 +127,35 @@
         <p><a href="https://github.com/yourusername/your-repo-name">View Repository on GitHub</a></p>
         <p>&copy; 2026 Mary Kate Cahill | DCDA 40833 | TCU</p>
     </footer>
+
+    <!-- JavaScript for hamburger menu toggle -->
+    <script>
+        // Get the hamburger button and navigation menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        // Toggle menu when hamburger is clicked
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when a navigation link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside of it
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
