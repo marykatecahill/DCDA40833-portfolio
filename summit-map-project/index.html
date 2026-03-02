@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hometown Map | Mary Kate Cahill</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation: Links to all portfolio pages -->
+    <nav>
+        <!-- Hamburger menu button (hidden on desktop, visible on mobile) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul id="nav-menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../ai-evaluation.html">AI Evaluation</a></li>
+            <li><a href="../lab03.html">Tufte Critique</a></li>
+            <li><a href="../lab04.html">Tableau Viz</a></li>
+            <li><a href="../lab05.html">Lab 5</a></li>
+            <li><a href="index.html">Hometown Map</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Hometown Map Project</h1>
+        <p>DCDA 40833 Skills Portfolio | Spring 2026</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>About This Project</h2>
+            <p>This interactive map shows my hometown of Summit, NJ, and highlights locations that have been meaningful to me throughout my life. Using Python and the Folium library, I created a custom map with a personalized basemap style and interactive markers for important places around town.</p>
+            
+            <p>This project demonstrates my ability to work with geographic data, Python programming, API integration, and web-based visualizations.</p>
+        </section>
+
+        <section>
+            <h2>Interactive Map</h2>
+            <!-- Embedded Map -->
+            <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+                <iframe src="summit_map.html" 
+                        style="width: 100%; height: 600px; border: 1px solid #ccc; border-radius: 4px;"
+                        title="Hometown Interactive Map">
+                </iframe>
+            </div>
+            
+            <p style="margin-top: 1rem;">
+                <strong>Tools Used:</strong> Python, Folium, Mapbox Geocoding API<br>
+                <strong>Data Source:</strong> Personal locations in Summit, NJ
+            </p>
+        </section>
+
+        <section>
+            <h2>Reflection</h2>
+            
+            <h3>Design Inspiration</h3>
+            <p>When I started designing my basemap, I honestly just thought about the maps I use every single day — mostly Google Maps and Apple Maps. I didn't want mine to look artsy or dramatic. I just wanted it to feel normal, clean, and realistic. Like something I would actually use if I was driving around Summit.</p>
+            
+            <p>I kept the land a really light gray because when I first tested darker colors, everything looked heavy and kind of messy. The lighter gray made the whole map feel and look easier to read. I also used a soft green for parks and a muted orange for the bigger roads. I didn't want the roads screaming at you, just enough to stand out without taking over the map.</p>
+            
+            <p>I switched my labels to dark gray instead of black because black felt way too harsh. That small change actually made a big difference. Overall, I was just trying to keep everything simple and balanced so the focus is on my hometown locations, not on crazy design choices.</p>
+            
+            <h3>Cartographic Challenges</h3>
+            <p>One of the biggest challenges was getting the colors to feel balanced. When I first styled the roads, the highways stood out way too much and made the map feel overwhelming. I had to tone them down so they blended better with the background.</p>
+            
+            <p>Another issue I ran into was that the street names were hard to read at first. They blended into the roads and didn't stand out enough. I had to adjust the text color and add a subtle halo so the names were easier to see. It was honestly surprising how much small color changes affected the overall look. I realized that map design is really about subtle adjustments.</p>
+            
+            <h3>Technical Challenges</h3>
+            <p>The coding part definitely tested my patience. I used the Mapbox Geocoding API to turn my Summit addresses into coordinates, and it took a lot of trial and error. Sometimes I thought my whole project was broken, and it ended up being something small.</p>
+            
+            <p>One thing that confused me was that Mapbox gives coordinates in one order, but Folium wants them flipped. So at first, my points were not showing up where they were supposed to. Once I realized I needed to switch the order, it finally worked.</p>
+            
+            <p>Adding images to pop-ups was also more complicated than I expected. The image links had to be direct links or nothing would show up. I definitely spent time wondering why it wasn't loading before figuring that out.</p>
+            
+            <p>I used AI to help me debug and explain parts of my code, but I made sure to ask it to explain things instead of just giving me answers. That actually helped a lot because I started understanding what each part was doing. By the end, I felt way more confident about how my map works instead of just hoping everything was right.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mary Kate Cahill | DCDA 40833</p>
+    </footer>
+
+    <!-- Script for mobile navigation -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
