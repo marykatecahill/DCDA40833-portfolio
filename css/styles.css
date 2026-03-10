@@ -7,11 +7,11 @@
    CSS Variables (Color Scheme)
    ========================= */
 :root {
-    --primary-color: #1e3a5f;      /* Ocean Blue */
-    --secondary-color: #22c55e;    /* Forest Green */
-    --accent-color: #38bdf8;       /* Slate Professional */
-    --text-color: #333;            /* Dark gray for text */
-    --text-secondary: #64748b;     /* Lighter gray for captions */
+    --primary-color: #4c1d95;      /* Deep Purple */
+    --secondary-color: #6d28d9;    /* Rich Purple */
+    --accent-color: #7e22ce;       /* Dark Purple Accent */
+    --text-color: #1a1a1a;         /* Near black for text */
+    --text-secondary: #64748b;     /* Gray for captions */
     --bg-color: #f4f4f4;           /* Light background */
     --white: #ffffff;
 }
@@ -31,9 +31,10 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-color);
     background-color: var(--bg-color);
+    font-size: 16px;
 }
 
 /* =========================
@@ -41,34 +42,39 @@ body {
    ========================= */
 /* Style semantic tags directly - no classes needed! */
 header {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, #4c1d95 0%, #5b21b6 100%);
     color: white;
-    padding: 2rem 0;
+    padding: 3rem 1rem;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(76, 29, 149, 0.25);
 }
 
 header h1 {
     color: white;
-    margin: 0 0 0.5rem 0;
-    font-size: 2rem;
+    margin: 0 0 0.75rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 header p {
     margin: 0;
-    opacity: 0.9;
-    font-size: 1.1rem;
+    opacity: 0.95;
+    font-size: 1.15rem;
+    font-weight: 300;
 }
 
 nav {
-    background-color: #3d1461;
+    background-color: rgba(76, 29, 149, 0.95);
+    backdrop-filter: blur(10px);
     padding: 0.75rem;
-    display: flex;              /* Make nav a flex container */
-    justify-content: center;    /* Center the ul inside nav */
-    position: sticky;           /* Stick to top when scrolling */
+    display: flex;
+    justify-content: center;
+    position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(76, 29, 149, 0.2);
+    transition: box-shadow 0.3s ease;
 }
 
 /* Style the navigation list */
@@ -91,12 +97,14 @@ nav a {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    transition: background-color 0.3s ease;
-    border-radius: 4px;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    font-weight: 500;
 }
 
 nav a:hover {
-    background-color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
 }
 
 /* Hamburger Menu Button (hidden on desktop) */
@@ -145,32 +153,41 @@ main {
 /* All sections inside main get consistent styling */
 main section {
     background-color: white;
-    padding: 2rem;
-    margin-bottom: 2rem;       /* Space between sections */
-    border-radius: 8px;        /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+main section:hover {
+    box-shadow: 0 4px 16px rgba(76, 29, 149, 0.15);
 }
 
 /* Style h2 headings inside sections */
 main section h2 {
     color: var(--primary-color);
     border-bottom: 3px solid var(--secondary-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    font-size: 1.875rem;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 main section h3 {
     color: var(--text-color);
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 /* Paragraphs inside sections */
 main section p {
-    margin-bottom: 1rem;
-    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    line-height: 1.9;
+    color: var(--text-color);
 }
 
 /* Lists inside sections */
@@ -194,11 +211,17 @@ main section li {
 }
 
 .viz-container img {
-    max-width: 100%;           /* Responsive: never wider than container */
-    height: auto;              /* Maintain aspect ratio */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0.5rem;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.viz-container img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 24px rgba(76, 29, 149, 0.18);
 }
 
 /* Figure captions */
@@ -345,64 +368,91 @@ tr:nth-child(even) {
     display: block;
     background: white;
     border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 1.5rem;
+    border-radius: 16px;
+    padding: 2rem;
     text-decoration: none;
     color: var(--text-color);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover::before {
+    transform: scaleX(1);
 }
 
 .portfolio-card:hover {
-    border-color: var(--primary-color);
-    box-shadow: 0 8px 16px rgba(77, 25, 121, 0.15);
-    transform: translateY(-4px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 12px 24px rgba(76, 29, 149, 0.25);
+    transform: translateY(-6px);
 }
 
 .portfolio-card h3 {
     color: var(--primary-color);
-    margin: 0 0 0.5rem 0;
-    font-size: 1.25rem;
+    margin: 0 0 0.75rem 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.portfolio-card:hover h3 {
+    color: var(--secondary-color);
 }
 
 .portfolio-card p {
     color: var(--text-secondary);
     font-size: 0.95rem;
-    margin: 0.75rem 0 0 0;
-    line-height: 1.5;
+    margin: 1rem 0 0 0;
+    line-height: 1.6;
 }
 
 /* Lab tag badge on portfolio cards */
 .lab-tag {
     display: inline-block;
-    background: var(--secondary-color);
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
     color: white;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
+    box-shadow: 0 2px 4px rgba(76, 29, 149, 0.25);
 }
 
 /* =========================
    Footer (semantic tag)
    ========================= */
 footer {
-    background-color: #333;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
     color: white;
     text-align: center;
-    padding: 1.5rem;
-    margin-top: 2rem;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
 
 footer a {
     color: var(--accent-color);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: var(--secondary-color);
+    text-decoration: none;
 }
 
 /* =========================
@@ -430,7 +480,7 @@ footer a:hover {
         left: -100%;
         top: 0;
         flex-direction: column;
-        background-color: #3d1461;
+        background-color: #4c1d95;
         width: 100%;
         height: 100vh;
         text-align: center;

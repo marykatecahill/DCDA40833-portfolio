@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="css/styles.css">
 
     <style>
+        /* ============================================
+           YOUR CSS COMMENTS SECTION
+           Add your CSS comments here explaining:
+           - Why you chose these specific styles
+           - How the dark mode toggle works
+           - Color choices and their purpose
+           - Transition effects and timing
+           ============================================ */
+
         .dark-mode-toggle {
             padding: 10px 20px;
             font-size: 16px;
@@ -68,13 +77,20 @@
 <body>
 
 <nav>
-    <ul>
+    <!-- Hamburger menu button (hidden on desktop, visible on mobile) -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <ul id="nav-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="lab02.html">AI Evaluation</a></li>
+        <li><a href="ai-evaluation.html">AI Evaluation</a></li>
         <li><a href="lab03.html">Tufte Critique</a></li>
-        <li><a href="lab04.html">Lab 4: Tableau</a></li>
-        <li><a href="lab05.html">Lab 5</a></li>
-        <li><a href="hometown-map.html">Hometown Map</a></li>
+        <li><a href="lab04.html">Tableau Visualization</a></li>
+        <li><a href="lab05.html">Vibe Coding</a></li>
+        <li><a href="summit-map-project/index.html">Hometown Map</a></li>
     </ul>
 </nav>
 
@@ -84,6 +100,24 @@
 </header>
 
 <main>
+
+<!-- ============================================
+    COMMENTS SECTION
+     Why I made certain design choices:
+For this lab, I designed the page to show the feature I built with AI and explain how it works. I placed the dark mode toggle button near the top so visitors can immediately try the feature themselves. I also organized the page into sections like Dark Mode Feature, Debugging with AI, Understanding Spectrum, and Vibe Coding Guidelines so it clearly explains both the coding experiment and what I learned from using AI as a coding collaborator.
+
+What each section of code accomplishes:
+The navigation bar connects this page to the rest of my portfolio. The header introduces the lab and explains that it focuses on AI-assisted coding. The overview section explains the purpose of the assignment. The dark mode section demonstrates the feature I built and explains how it works. The debugging section explains how I used AI to fix problems in my code. The understanding spectrum section describes what parts of the code I fully understand and what parts I needed help with. The guidelines section explains the personal rules I developed for using AI when coding. The screenshot section shows proof that the feature works, and the key takeaways summarize what I learned from the lab.
+
+How different elements work together:
+The HTML organizes the page and structures the explanation of my coding experiment. The CSS controls the styling and also defines the dark mode colors that appear when the dark-mode class is applied to the page. The JavaScript controls the dark mode toggle by adding or removing that class and saving the user’s preference with localStorage. Together these elements create a page where visitors can interact with the feature and read about the process behind building it.
+     ============================================ -->
+
+<section>
+    <h2>Lab 5 Overview</h2>
+    <!-- TODO: Add your Lab 5 overview here -->
+    <p>In Lab 5, I experimented with using AI to help me code parts of my portfolio website. The idea of the lab was to explore “vibe coding,” where you describe what you want and AI helps generate the code, while still making sure you actually understand what it’s doing. I used AI to help build a dark mode toggle for my site and also used it to help debug some issues with my navigation links and page structure. As I worked through the code, I had to read it carefully, test it in Live Server, and add comments explaining what each part does. This lab helped me see how AI can be really helpful when coding, but also how important it is to slow down and understand the code instead of just copying it.</p>
+</section>
 
 <section>
     <button class="dark-mode-toggle" id="darkModeToggle">🌙 Dark Mode</button>
@@ -145,6 +179,14 @@
 
     <!-- Put your screenshot in an images folder -->
     <img src="images/lab5-screenshot.png" alt="Dark mode working screenshot">
+</section>
+
+<section>
+    <h2>Key Takeaways</h2>
+    <!-- TODO: Add your key takeaways here -->
+    <ul>
+        <li>This lab helped me understand both the benefits and the risks of using AI when coding. AI was really helpful when I got stuck or needed help figuring out how to implement something like dark mode. At the same time, I realized how easy it would be to rely on it too much if I wasn’t careful. The biggest takeaway for me is that AI should be a tool that helps me learn, not something that replaces actually understanding the code.</li>
+    </ul>
 </section>
 
 </main>
