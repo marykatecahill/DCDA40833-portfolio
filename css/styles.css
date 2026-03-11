@@ -433,6 +433,30 @@ tr:nth-child(even) {
 }
 
 /* =========================
+   Resume Button
+   ========================= */
+.resume-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(76, 29, 149, 0.3);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.resume-button:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    box-shadow: 0 6px 16px rgba(76, 29, 149, 0.4);
+    transform: translateY(-2px);
+}
+
+/* =========================
    Footer (semantic tag)
    ========================= */
 footer {
